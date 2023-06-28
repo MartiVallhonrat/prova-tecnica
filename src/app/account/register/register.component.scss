@@ -1,0 +1,46 @@
+.container  {
+    position: fixed;
+    right: 0px;
+    min-width: 100%;
+    max-height: 100%;
+    min-height: 100%;
+    background: linear-gradient(57deg, #b50504, #000000);
+    background-size: 400% 400%;
+
+    -webkit-animation: Animation 16s ease infinite;
+    -moz-animation: Animation 16s ease infinite;
+    -o-animation: Animation 16s ease infinite;
+    animation: Animation 16s ease infinite;
+}
+@-webkit-keyframes Animation {
+    0%{background-position:90% 0%}
+    50%{background-position:11% 100%}
+    100%{background-position:90% 0%}
+}
+@-moz-keyframes Animation {
+    0%{background-position:90% 0%}
+    50%{background-position:11% 100%}
+    100%{background-position:90% 0%}
+}
+@-o-keyframes Animation {
+    0%{background-position:90% 0%}
+    50%{background-position:11% 100%}
+    100%{background-position:90% 0%}
+}
+@keyframes Animation {
+    0%{background-position:90% 0%}
+    50%{background-position:11% 100%}
+    100%{background-position:90% 0%}
+}
+
+.title {
+    font-size: xx-large;
+    font-weight: 800;
+}
+.logo {
+    max-width: 200px;
+}
+.card-title {
+    font-size: 1000;
+    font-weight: 600;
+}

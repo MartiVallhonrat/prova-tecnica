@@ -1,0 +1,47 @@
+<div class="container">
+    <mat-card class="mt-5 p-3 col-md-6 offset-md-3 mat-card bg-light">
+        <div class="text-primary d-flex align-items-center justify-content-center flex-column p-3">
+            <h1 class="title">CONTROLLI FILMS</h1>
+            <img class="logo" src="../../../assets/images/logo.png" alt="logo">
+        </div>
+        <mat-card-header>
+            <h4 class="card-title">Login</h4>
+        </mat-card-header>
+        <mat-card-content>
+            <form [formGroup]="form">
+                
+                <div class="d-flex flex-column gap-3">
+                    <mat-form-field class="pt-4">
+                        <mat-label>Username</mat-label>
+                        <input type="text" matInput placeholder="Username" formControlName="username">
+                        <mat-error class="text-danger" *ngIf="form.get('username')?.errors && form.get('username')?.hasError('required')">Username is <strong>required</strong></mat-error>
+                    </mat-form-field>
+                
+                    <mat-form-field class="pb-4">
+                        <mat-label>Password</mat-label>
+                        <input matInput [type]="hide ? 'password' : 'text'" placeholder="Password" formControlName="password">
+                        <button mat-icon-button matSuffix (click)="hide = !hide">
+                            <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                        </button>
+                        <mat-error class="text-danger" *ngIf="form.get('password')?.errors && form.get('password')?.hasError('required')">Password is <strong>required</strong></mat-error>
+                    </mat-form-field>
+                </div>
+
+                <div class="button">
+                    <button [disabled]="loading" class="w-100" mat-flat-button (click)="onSubmit()" type="submit" color="primary">Login</button>
+                </div>
+
+                <div class="text-center pt-4">
+                    <p>You don't have an account? <a routerLink="/account/register">Register</a> first.</p>
+                </div>
+
+                <div class="m-3 d-flex justify-content-center">
+                    <mat-progress-spinner class="text-center" *ngIf="loading" color="primary" mode="indeterminate"></mat-progress-spinner>
+                </div>
+                <div *ngIf="error" class="alert alert-danger">{{error}}</div>
+                <div *ngIf="success" class="alert alert-success">{{success}}</div>
+
+            </form>
+        </mat-card-content>
+    </mat-card>
+</div>

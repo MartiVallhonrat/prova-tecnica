@@ -1,1 +1,105 @@
-/* You can add global styles to this file, and also import other style files */
+
+
+@use '@angular/material' as mat;
+
+
+@include mat.core();
+
+$md-black-palette: (
+    50 : #e1e1e1,
+    100 : #b5b4b3,
+    200 : #848281,
+    300 : #53504e,
+    400 : #2e2b28,
+    500 : #090502,
+    600 : #080402,
+    700 : #060401,
+    800 : #050301,
+    900 : #020101,
+    A100 : #a6a6a6,
+    A200 : #8c8c8c,
+    A400 : #737373,
+    A700 : #666666,
+    contrast: (
+        50 : #000000,
+        100 : #000000,
+        200 : #000000,
+        300 : #ffffff,
+        400 : #ffffff,
+        500 : #ffffff,
+        600 : #ffffff,
+        700 : #ffffff,
+        800 : #ffffff,
+        900 : #ffffff,
+        A100 : #000000,
+        A200 : #000000,
+        A400 : #ffffff,
+        A700 : #ffffff,
+    )
+);
+
+$md-red-palette: (
+    50 : #f6e1e1,
+    100 : #e9b4b4,
+    200 : #da8282,
+    300 : #cb504f,
+    400 : #c02b2a,
+    500 : #b50504,
+    600 : #ae0403,
+    700 : #a50403,
+    800 : #9d0302,
+    900 : #8d0101,
+    A100 : #ffb9b9,
+    A200 : #ff8686,
+    A400 : #ff5353,
+    A700 : #ff3a3a,
+    contrast: (
+        50 : #000000,
+        100 : #000000,
+        200 : #000000,
+        300 : #ffffff,
+        400 : #ffffff,
+        500 : #ffffff,
+        600 : #ffffff,
+        700 : #ffffff,
+        800 : #ffffff,
+        900 : #ffffff,
+        A100 : #000000,
+        A200 : #000000,
+        A400 : #000000,
+        A700 : #ffffff,
+    )
+);
+
+$controlli-delta-primary: mat.define-palette($md-red-palette);
+$controlli-delta-accent: mat.define-palette($md-black-palette);
+
+$controlli-delta-warn: mat.define-palette(mat.$red-palette);
+
+$controlli-delta-theme: mat.define-light-theme((
+  color: (
+    primary: $controlli-delta-primary,
+    accent: $controlli-delta-accent,
+    warn: $controlli-delta-warn,
+  )
+));
+
+@include mat.all-component-themes($controlli-delta-theme);
+
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+h1, h2, h3, h4, h5 { font-family: 'Bebas Neue', sans-serif; }
+
+
+$primary: #B50504ff;
+$secondary: #090502ff;
+$light: #FFFFFFff;
+
+:root {
+    --primary: #B50504ff;
+    --secondary: #090502ff;
+    --light: #FFFFFFff;
+}
+
+@import 'bootstrap/scss/bootstrap';
