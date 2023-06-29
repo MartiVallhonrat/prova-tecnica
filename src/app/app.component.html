@@ -1,11 +1,18 @@
-<nav class="navbar navbar-expand navbar-dark bg-dark px-3" *ngIf="user">
-    <div class="navbar-nav">
-        <a class="nav-item nav-link" routerLink="/">Home</a>
-        <a class="nav-item nav-link" routerLink="/">Favourites</a>
-        <button class="btn btn-link nav-item nav-link" (click)="logout()">Logout</button>
+<nav class="navbar navbar-expand bg-secondary d-flex justify-content-between p-3 px-5" *ngIf="user">
+    <div routerLink="/" class="d-flex justify-content-center px-4 align-items-center">
+        <img src="../assets/images/logo.png" alt="logo" style="height: 90px;">
+        <h1 class="m-0 ps-3 title text-white">CONTROLLI FILMS</h1>
+    </div>
+    <ul>
+        <li><a class="fw-bold" routerLinkActive="active" routerLink="/">Home</a></li>
+        <li><a class="fw-bold" routerLinkActive="active" routerLink="/favourites">Favourites</a></li>
+    </ul>
+    <div class="buttons">
+        <button mat-mini-fab color="primary" style="height: 60px; width: 60px;" (click)="logout()" aria-label="Example icon button with a menu icon">
+            <mat-icon class="text-light">exit_to_app</mat-icon>
+        </button>
     </div>
 </nav>
-
 <div class="container">
     <router-outlet></router-outlet>
 </div>
