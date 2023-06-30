@@ -91,6 +91,15 @@ html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 h1, h2, h3, h4, h5 { font-family: 'Bebas Neue', sans-serif; }
 
+.success-snackbar {
+    --mdc-snackbar-container-color: var(--primary);
+    --mdc-snackbar-supporting-text-color: white;
+}
+.remove-snackbar {
+    --mdc-snackbar-container-color: white;
+    --mdc-snackbar-supporting-text-color: var(--primary);
+}
+
 
 $primary: #B50504ff;
 $secondary: #090502ff;

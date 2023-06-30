@@ -9,11 +9,15 @@ import { AppComponent } from './app.component';
 import { MaterialModule } from './material/material.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HomeComponent } from './home/home.component';
+import { FavouritesComponent } from './favourites/favourites.component';
+import { AddFavouritesSnackbarComponent } from './home/home-snackbars/add-favourites-snackbar/add-favourites-snackbar.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent
+    HomeComponent,
+    FavouritesComponent,
+    AddFavouritesSnackbarComponent
   ],
   imports: [
     BrowserModule,

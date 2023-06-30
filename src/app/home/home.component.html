@@ -4,7 +4,7 @@
             Search for the movie you want!
         </mat-card-header>
         <div class="d-flex flex-column justify-content-around flex-md-row align-items-center gap-4">
-            <div class="d-flex gap-3 align-items-center flex-column flex-lg-row py-3">
+            <div class="d-flex gap-3 align-items-center flex-column flex-lg-row py-3 w-100">
                 <mat-form-field class="form-field">
                     <mat-label>Title</mat-label>
                     <input matInput type="text" [(ngModel)]="searchTerm" placeholder="Enter a movie title" />
@@ -23,18 +23,18 @@
     <div *ngIf="results" class="card-container">
         <div class="card">
             <div class="card-header d-flex align-items-center justify-content-center">
-                <h2 class="m-0 text-center title-card">{{results.Title.toUpperCase()}}</h2>
+                <h2 class="m-0 text-center p-2 title-card">{{results.Title.toUpperCase()}}</h2>
             </div>
             <div class="card-body d-flex gap-3">
                 <img *ngIf="results.Poster == 'N/A'" src="../../assets/images/404stock.jpg" alt="stock-poster">
                 <img *ngIf="results.Poster !== 'N/A'" [src]="results.Poster" alt="poster">
                 <div class="card-text w-100">
-                    <h3 class="m-0">{{results.Director}}</h3>
+                    <h4 class="m-0">{{results.Title}}</h4>
                     <p class="m-0">({{results.Year}})</p>
-                    <h4 *ngIf="results.Ratings == []" class="m-0">{{results.Ratings[0].Value}}</h4>
+                    <p class="m-0">{{results.Director}}</p>
                 </div>
-                <button mat-mini-fab class="" color="primary" style="margin-top: 50%; height: 60px; width: 60px;" (click)="search()">
-                    <mat-icon class="text-white">search</mat-icon>
+                <button class="position-realtive top-50 end-0 translate-middle-y" (click)="addFavourites(results)" mat-icon-button color="primary">
+                    <mat-icon class="mat-icon">favorite</mat-icon>
                 </button>
             </div>
         </div>

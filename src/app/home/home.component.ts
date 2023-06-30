@@ -1,5 +1,8 @@
 import { Component } from '@angular/core';
 import { MoviesService } from '../services/movies.service';
+import { MatSnackBar } from '@angular/material/snack-bar';
+import { AddFavouritesSnackbarComponent } from './home-snackbars/add-favourites-snackbar/add-favourites-snackbar.component';
+import { Movie } from '../interfaces/movies';
 
 @Component({
   selector: 'app-home',
@@ -10,14 +13,27 @@ export class HomeComponent {
 
   searchTerm?: string;
   searchYear?: string;
-  results: any;
+  results?: Movie;
   error?: string;
+  favourites: Movie[] | null = null;
 
-  constructor(private moviesService: MoviesService) { }
+  constructor
+  (
+    private moviesService: MoviesService,
+    private snackBar: MatSnackBar
+  ) 
+  { }
+
+  addFavourites(newMovie: Movie) {
+
+    this.moviesService.addFavourites(newMovie);
+    this.snackBar.openFromComponent(AddFavouritesSnackbarComponent, {duration: 2000, panelClass: "success-snackbar"});
+  }
 
   search() {
 
     this.error = undefined;
+    this.results = undefined;
 
     if (!this.searchTerm) {
       this.error = "The title field is required!"
@@ -28,11 +44,16 @@ export class HomeComponent {
       .subscribe(
         data => {
           console.log(data)
-          this.results = data;
+          if (data.Response == "True") {
+            this.results = data;
+          }
+          if (data.Response == "False") {
+            this.error = data.Error;
+          }
+          
         },
         error => {
-          console.log(error)
-          this.error = error;
+          console.log(error);
         }
       );
   }
