@@ -1,3 +1,4 @@
 export const environment = {
-    apiUrl: 'http://localhost:4000'
+    apiUrl: 'https://www.omdbapi.com/',
+    apiKey: 'e25f8fc3'
 };

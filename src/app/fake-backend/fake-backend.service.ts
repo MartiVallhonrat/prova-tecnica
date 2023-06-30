@@ -4,7 +4,7 @@ import { delay, of, throwError } from 'rxjs';
 import { User } from '../interfaces/user';
 import { HttpResponse } from '@angular/common/http';
 
-let users: any[] = [];
+let users: any[] = JSON.parse(localStorage.getItem("users")!) || [];
 
 @Injectable({
   providedIn: 'root'
