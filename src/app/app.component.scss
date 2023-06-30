@@ -33,6 +33,12 @@ a {
     padding: 15px 20px;
     position: relative;
 }
+.collapse-nav {
+    display: none;
+}
+.collapse-menu {
+    display: contents;
+}
 a:after {    
     background: none repeat scroll 0 0 transparent;
     bottom: 0;
@@ -54,4 +60,12 @@ a:hover:after {
     height: 100vh;
     margin: 0;
     padding: 0;
+}
+@media (min-width: 1200px) {
+    .collapse-nav {
+        display: contents;
+    }
+    .collapse-menu {
+        display: none;
+    }
 }

@@ -3,14 +3,33 @@
         <img src="../assets/images/logo.png" alt="logo" style="height: 90px;">
         <h1 class="m-0 ps-3 title text-white">CONTROLLI FILMS</h1>
     </div>
-    <ul>
+    <ul class="collapse-nav">
         <li><a class="fw-bold" routerLinkActive="active" routerLink="/home">Home</a></li>
         <li><a class="fw-bold" routerLinkActive="active" routerLink="/favourites">Favourites</a></li>
     </ul>
-    <div class="buttons">
+    <div class="buttons collapse-nav">
         <button mat-mini-fab color="primary" style="height: 60px; width: 60px;" (click)="logout()">
             <mat-icon class="text-light">exit_to_app</mat-icon>
         </button>
+    </div>
+    <div class="collapse-menu">
+        <button mat-icon-button [matMenuTriggerFor]="menu">
+            <mat-icon class="text-light">more_vert</mat-icon>
+        </button>
+        <mat-menu #menu="matMenu">
+            <button routerLink="/home" mat-menu-item>
+                <mat-icon>home</mat-icon>
+                <span>Home</span>
+            </button>
+            <button routerLink="/favourites" mat-menu-item>
+                <mat-icon>favorite</mat-icon>
+                <span>Favourites</span>
+            </button>
+            <button (click)="logout()" mat-menu-item>
+                <mat-icon class="text-primary">exit_to_app</mat-icon>
+                <span class="text-primary">Log Out</span>
+            </button>
+        </mat-menu>
     </div>
 </nav>
 <div class="container">
