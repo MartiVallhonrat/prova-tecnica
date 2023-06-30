@@ -7,6 +7,7 @@ import {MatCardModule} from '@angular/material/card';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import {MatDividerModule} from '@angular/material/divider';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
+import {MatDialogModule} from '@angular/material/dialog';
 
 const MaterialComponents = [
     MatIconModule,
@@ -15,7 +16,8 @@ const MaterialComponents = [
     MatCardModule,
     MatProgressSpinnerModule,
     MatDividerModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    MatDialogModule
 ]
   
   

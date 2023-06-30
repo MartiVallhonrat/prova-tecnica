@@ -24,7 +24,7 @@ export class RegisterComponent implements OnInit {
   ) {
 
     if (this.accountService.userValue) {
-      this.router.navigate(['/']);
+      this.router.navigate(['/home']);
     }
   }
 

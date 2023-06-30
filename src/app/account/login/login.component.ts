@@ -25,7 +25,7 @@ export class LoginComponent implements OnInit {
     private accountService: AccountService
   ) {
       if (this.accountService.userValue) {
-        this.router.navigate(['/']);
+        this.router.navigate(['/home']);
       }
     }
 
@@ -55,7 +55,7 @@ export class LoginComponent implements OnInit {
     this.accountService.login(this.form.value.username, this.form.value.password)
         .subscribe({
           next: () => {
-            const returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/';
+            const returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/home';
             this.router.navigateByUrl(returnUrl);
           },
           error: (error: any) => {

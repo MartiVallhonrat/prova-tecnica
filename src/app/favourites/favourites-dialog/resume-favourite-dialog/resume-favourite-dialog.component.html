@@ -1,0 +1,14 @@
+<h1 mat-dialog-title class="fw-bold text-primary">Your abstract of the film:</h1>
+<div mat-dialog-content>
+    <div class="mb-3 mt-3">
+        <mat-form-field hintLabel="Max 400 characters" style="height: 200px; width: 100%;">
+            <mat-label>Abstract</mat-label>
+            <input [formControl]="message"  matInput #input maxlength="400" placeholder="Ex: In a post-apocalyptic world, a diverse group of survivors must band together to overcome insurmountable odds. With action-packed sequences, heart-stopping suspense, and unexpected plot twists, this film explores themes of resilience, sacrifice, and the indomitable human spirit. Get ready for an unforgettable cinematic experience.">
+            <mat-hint align="end">{{input.value.length}}/400</mat-hint>
+        </mat-form-field>
+    </div>
+</div>
+<div mat-dialog-actions class="d-flex justify-content-center p-3">
+    <button mat-button (click)="closeDialog()">Cancel</button>
+    <button mat-button class="bg-primary text-white" (click)="confirmed()" cdkFocusInitial>Edit It!</button>
+</div>

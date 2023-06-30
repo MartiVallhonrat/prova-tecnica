@@ -43,7 +43,6 @@ export class HomeComponent {
     this.moviesService.searchBy(this.searchTerm, this.searchYear)
       .subscribe(
         data => {
-          console.log(data)
           if (data.Response == "True") {
             this.results = data;
           }

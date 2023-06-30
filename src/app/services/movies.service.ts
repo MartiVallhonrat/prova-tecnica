@@ -15,7 +15,6 @@ export class MoviesService {
   constructor(private http: HttpClient) { }
 
   searchBy(searchTitle: string, searchYear?: string) {
-    debugger
 
     let params = new HttpParams()
     .set('t', searchTitle)
@@ -33,6 +32,12 @@ export class MoviesService {
 
     if(!this.favourites?.includes(newMovie)) {
       this.favourites?.push(newMovie); 
+    }
+  }
+
+  updateAbstract(resume: string | undefined, editedMovie: number) {
+    if (this.favourites) {
+      this.favourites[editedMovie].Resume = resume;
     }
   }
 }

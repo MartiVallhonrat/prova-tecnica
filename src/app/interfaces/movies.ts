@@ -22,6 +22,7 @@ export interface Movie {
     totalSeasons: string;
     Response: string;
     Error?: string;
+    Resume?: string;
 }
   
 interface Rating {
